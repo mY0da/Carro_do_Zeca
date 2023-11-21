@@ -1,9 +1,20 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+require "faker"
+
+puts "Creating..."
+User.destroy_all
+Car.destroy_all
+
+i = 1
+10.times do
+  car_brand = Faker::Vehicle.make
+  car_model = Faker::Vehicle.model(make_of_model: car_brand)
+
+  user = {first_name: Faker::Games::Zelda.character, last_name: Faker::Games::Pokemon.name, phone_number: Faker::PhoneNumber.cell_phone, email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8)}
+  car =  {brand: car_brand, car_type: Faker::Vehicle.drive_type, model: car_model, registration_plate: Faker::Vehicle.license_plate, description: Faker::Movie.quote, location: Faker::Address.city, user_id: i}
+
+  User.create!(user)
+  Car.create!(car)
+  i += 1
+end
+
+puts "Finished!"
