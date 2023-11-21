@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_21_121956) do
     t.text "description"
     t.string "location"
     t.bigint "user_id", null: false
+    t.string "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_cars_on_user_id"
