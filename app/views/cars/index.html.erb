@@ -1,0 +1,23 @@
+<%# fazer navbar %>
+
+<div class='header' style = 'text-align: center; margin: 0 auto'>
+  <h1>Available Cars</h1>
+</div>
+
+<div class="container" style='display: flex; flex-wrap: wrap; margin: 0 auto'>
+  <% @cars.each do |car| %>
+    <div class="card-car" style='margin: 5px; flex-basis: calc(25% - 10px);'>
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" style = 'width: 100%'/>
+      <div class="card-car-infos">
+        <div>
+          <h2><%= car.brand %> <%= car.model %></h2>
+          <p><%= car.description %></p>
+        </div>
+        <div class="card-car-price-avatar">
+          <h2 class="card-car-pricing"><%= car.price %>€/per day</h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-car-user avatar-bordered" />
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
