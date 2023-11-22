@@ -31,7 +31,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_21_121956) do
   create_table "reservations", force: :cascade do |t|
     t.string "start_date"
     t.string "end_date"
-    t.integer "price"
     t.bigint "user_id", null: false
     t.bigint "car_id", null: false
     t.datetime "created_at", null: false
