@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :set_car, only: [:new, :create]
+  before_action :set_car, only: %i[new create]
 
   def new
     @reservation = Reservation.new
@@ -8,6 +8,7 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.car = @car
+    @reservation.user = current_user
     if @reservation.save
       redirect_to car_path(@car)
     end
