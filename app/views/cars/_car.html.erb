@@ -1,47 +1,66 @@
-<div id="<%= dom_id car %>">
-  <p>
-    <strong>Brand:</strong>
-    <%= car.brand %>
-  </p>
+<div class="container mt-5">
+  <div class="row">
 
-  <p>
-    <strong>Model:</strong>
-    <%= car.model %>
-  </p>
+    <div class="col-sm-3">
+      <div id="<%= dom_id car %>">
+          <p>
+            <strong>Brand:</strong>
+            <%= car.brand %>
+          </p>
 
-  <p>
-    <strong>Type:</strong>
-    <%= car.car_type %>
-  </p>
+          <p>
+            <strong>Model:</strong>
+            <%= car.model %>
+          </p>
 
-  <p>
-    <strong>License Plate:</strong>
-    <%= car.registration_plate %>
-  </p>
+          <p>
+            <strong>Type:</strong>
+            <%= car.car_type %>
+          </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= car.description %>
-  </p>
+      </div>
+    </div>
 
-  <p>
-    <strong>Location:</strong>
-    <%= car.location %>
-  </p>
+    <div class="col-sm-3">
+      <div id="<%= dom_id car %>">
 
-  <p>
-    <strong>User:</strong>
-    <%= car.user.full_name %>
-  </p>
+          <p>
+            <strong>License Plate:</strong>
+            <%= car.registration_plate %>
+          </p>
 
-  <p>
-    <strong>Location:</strong>
-    <%= car.location %>
-  </p>
+          <p>
+            <strong>Description:</strong>
+            <%= car.description %>
+          </p>
 
-  <p>
-    <strong>Price:</strong>
-    <%= car.price %>
-  </p>
+          <p>
+            <strong>Location:</strong>
+            <%= car.location %>
+          </p>
 
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div id="<%= dom_id car %>">
+          <p>
+            <strong>User:</strong>
+            <%= car.user.full_name %>
+          </p>
+
+          <p>
+            <strong>Location:</strong>
+            <%= car.location %>
+          </p>
+
+          <p>
+            <strong>Price:</strong>
+            <%= car.price %>
+          </p>
+
+      </div>
+    </div>
+
+  </div>
 </div>
