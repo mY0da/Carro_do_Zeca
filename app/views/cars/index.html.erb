@@ -8,6 +8,7 @@
   <div class="row">
     <% @cars.each do |car| %>
       <div class="card-trip col-3">
+        <%= link_to car, style: 'text-decoration: none' do %>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjD2x4xEGygFb46PitJERsn3egbRMqvB7aQ4H5uAS0MgqaJeNEodadrW0eUH_g2Jb4Hlg&usqp=CAU" />
         <div class="card-trip-infos">
           <div>
@@ -17,6 +18,7 @@
           <h2 class="card-trip-pricing"><%= car.price %>€/per day</h2>
             <img src="https://cdn.sabado.pt/images/2016-12/img_640x426$2016_12_29_15_40_00_200512.jpg" class="card-trip-user avatar-bordered" />
         </div>
+        <% end %>
       </div>
 
     <% end %>
