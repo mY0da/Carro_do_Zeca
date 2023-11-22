@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_action :set_car, only[:new, :create]
+  before_action :set_car, only: [:new, :create]
 
   def new
     @reservation = Reservation.new
