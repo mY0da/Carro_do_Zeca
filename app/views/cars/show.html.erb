@@ -6,3 +6,7 @@
     <h4 style = 'margin-left: 10px'><%= render @car %></h4>
   </div>
 </div>
+
+<div style="margin-top: 10px; margin-right: 10px; text-align: right">
+  <%= link_to 'Book car', new_car_reservation_path(@car), class: 'btn btn-new_reservation' %>
+</div>
