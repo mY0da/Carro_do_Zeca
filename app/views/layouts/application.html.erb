@@ -11,11 +11,9 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= render "layouts/navbar" %>
+  <body class="d-flex flex-column min-vh-100">
+    <%= render "shared/navbar" %>
     <%= yield %>
-    <%= render "layouts/footer" %>
+    <footer class="card-footer mt-auto text-body-secondary text-center">© 2023 Zeca Vrum Vrum, Lda</footer>
   </body>
-
-
 </html>
