@@ -1,26 +1,23 @@
-<%# fazer navbar %>
-
-<div class='header' style = 'text-align: center; margin: 0 auto'>
+<div class='header' style='text-align: center; margin: 0 auto'>
   <h1>Available Cars</h1>
 </div>
 
-<div class="container mt-5 d-flex justify-content-center">
-  <div class="row">
-    <% @cars.each do |car| %>
-      <div class="card-trip col-3">
-        <%= link_to car, style: 'text-decoration: none' do %>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjD2x4xEGygFb46PitJERsn3egbRMqvB7aQ4H5uAS0MgqaJeNEodadrW0eUH_g2Jb4Hlg&usqp=CAU" />
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= car.brand %> <%= car.model %></h2>
-            <p><%= car.description %></p>
+<div class="container mt-5">
+  <% @cars.each do |car| %>
+    <div class="card-trip mb-4 d-flex">
+      <%= link_to car, style: 'text-decoration: none', class: 'd-flex' do %>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjD2x4xEGygFb46PitJERsn3egbRMqvB7aQ4H5uAS0MgqaJeNEodadrW0eUH_g2Jb4Hlg&usqp=CAU" class="card-trip-image" />
+        <div class="card-trip-infos ml-3 d-flex flex-column justify-content-between">
+          <div class="align-icons">
+            <h2><i class="fa-solid fa-car" style="color: #000000;"></i><%= car.brand.upcase %> <%= car.model.upcase %></h2>
+            <p><i class="fa-solid fa-location-dot" style="color: #000000;"></i><%= car.location %></p>
+            <p ><%= car.description %></p>
           </div>
-          <h2 class="card-trip-pricing"><%= car.price %>€/per day</h2>
-            <img src="https://cdn.sabado.pt/images/2016-12/img_640x426$2016_12_29_15_40_00_200512.jpg" class="card-trip-user avatar-bordered" />
+          <span class="pricing-position">
+          <h2 class="card-trip-pricing">€<%= car.price %> total</h2>
+          </span>
         </div>
-        <% end %>
-      </div>
-
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
