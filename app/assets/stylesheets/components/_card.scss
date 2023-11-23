@@ -2,6 +2,8 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+  width: 600px;
 }
 
 .card-trip > img {
@@ -20,15 +22,16 @@
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  align-items: center;
 }
 
 
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  flex-direction: column;
   position: relative;
+  width: 300px;
 }
 
 .card-trip-infos .card-trip-user {
@@ -37,4 +40,16 @@
   top: -20px;
   width: 40px;
   height: 40px;
+}
+
+span.pricing-position {
+  position: absolute;
+  text-align: right;
+  bottom: 16px;
+  right: 16px;
+}
+
+.card-trip h2 i.fa-solid,
+.card-trip p i.fa-solid {
+  margin-right: 8px;
 }
