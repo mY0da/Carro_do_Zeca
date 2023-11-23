@@ -3,6 +3,7 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+    authorize @reservation
   end
 
   def create
@@ -12,15 +13,22 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to car_path(@car)
     end
+    authorize @reservation
   end
 
   def index
     @reservations = Reservation.all
+    authorize @reservations
   end
 
   def show
     @reservation = Reservation.find(params[:id])
     render :show
+    authorize @reservation
+  end
+
+  def confirmation
+    skip_authorization
   end
 
   private
@@ -31,8 +39,5 @@ class ReservationsController < ApplicationController
 
   def reservation_params
     params.require(:reservation).permit(:start_date, :end_date)
-  end
-
-  def confirmation
   end
 end
