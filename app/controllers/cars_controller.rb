@@ -8,6 +8,7 @@ class CarsController < ApplicationController
 
   def show
     @car = Car.find(params[:id])
+    @reservation = Reservation.new
     render :show
     authorize @car
   end
