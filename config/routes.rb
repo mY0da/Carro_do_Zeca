@@ -17,7 +17,10 @@ Rails.application.routes.draw do
   #                         POST   /users(.:format)                devise/registrations#create
   root to: "pages#home"
 
-  resources :cars, only: [:index, :show, :new, :create] do
+  resources :cars do
+    collection do
+      get :my_cars
+    end
     resources :reservations, only: [:new, :create] do
       collection do
         get :confirmation
