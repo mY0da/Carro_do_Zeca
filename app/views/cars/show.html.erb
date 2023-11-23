@@ -4,9 +4,6 @@
     <div class="card-product d-flex align-items-center">
       <div class="alignment" >
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjD2x4xEGygFb46PitJERsn3egbRMqvB7aQ4H5uAS0MgqaJeNEodadrW0eUH_g2Jb4Hlg&usqp=CAU", style='width: 600px; margin-right: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.6)'/>
-        <div class="card-product-infos">
-          <%= render @car %>
-        </div>
         <div style="margin-top: 5px; margin-left: 45px; text-align: left">
           <% if policy(@car).edit? && policy(@car).destroy? %>
             <%= link_to "Edit this car", edit_car_path(@car) %>
@@ -21,6 +18,9 @@
           <% end %>
         </div>
       </div>
+      <div class="card-product-infos">
+          <%= render @car %>
+        </div>
     </div>
   </div>
 </div>
