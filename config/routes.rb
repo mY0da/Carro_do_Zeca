@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   #                         PUT    /users(.:format)                devise/registrations#update
   #                         DELETE /users(.:format)                devise/registrations#destroy
   #                         POST   /users(.:format)                devise/registrations#create
-  root to: "pages#index"
+  root to: "pages#home"
 
   resources :cars do
     collection do
