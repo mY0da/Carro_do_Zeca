@@ -18,7 +18,11 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :cars, only: [:index, :show, :new, :create] do
-    resources :reservations, only: [:new, :create]
+    resources :reservations, only: [:new, :create] do
+      collection do
+        get :confirmation
+      end
+    end
   end
   resources :reservations, only: [:index, :show]
 end
