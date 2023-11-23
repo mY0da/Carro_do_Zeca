@@ -1,8 +1,9 @@
-<div class='header' style='text-align: center; margin: 0 auto'>
+<div class='header' style='text-align: center; margin: 40px auto'>
   <h1>Available Cars</h1>
 </div>
 
-<div class="container mt-5">
+
+<div class="container">
   <% @cars.each do |car| %>
     <div class="card-trip mb-4 d-flex">
       <%= link_to car, style: 'text-decoration: none', class: 'd-flex' do %>
