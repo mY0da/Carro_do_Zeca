@@ -4,10 +4,16 @@
   background-size: cover;
   background-position: center;
   padding: 230px;
+  margin: 10px;
 }
 
 .card-img-top {
-    height: 400px;
-    width: 200px;
-    object-fit: cover;
+  height: 400px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.animate__animated animate__flip {
+ /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 10s; /* don't forget to set a duration! */
 }
