@@ -1,0 +1,26 @@
+<div class='header' style='text-align: center; margin: 0 auto'>
+  <h1>Your Cars</h1>
+</div>
+<% if @cars.count.zero? %>
+  <h2>You don't have any cars yet!</h2>
+<% else %>
+  <div class="container mt-5">
+    <% @cars.each do |car| %>
+      <div class="card-trip mb-4 d-flex">
+        <%= link_to car, style: 'text-decoration: none', class: 'd-flex' do %>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjD2x4xEGygFb46PitJERsn3egbRMqvB7aQ4H5uAS0MgqaJeNEodadrW0eUH_g2Jb4Hlg&usqp=CAU" class="card-trip-image" />
+          <div class="card-trip-infos ml-3 d-flex flex-column justify-content-between">
+            <div class="align-icons">
+              <h2><i class="fa-solid fa-car" style="color: #000000;"></i><%= car.brand.upcase %> <%= car.model.upcase %></h2>
+              <p><i class="fa-solid fa-location-dot" style="color: #000000;"></i><%= car.location %></p>
+              <p ><%= car.description %></p>
+            </div>
+            <span class="pricing-position">
+            <h2 class="card-trip-pricing">€<%= car.price %> total</h2>
+            </span>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
