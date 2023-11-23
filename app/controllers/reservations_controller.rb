@@ -32,4 +32,7 @@ class ReservationsController < ApplicationController
   def reservation_params
     params.require(:reservation).permit(:start_date, :end_date)
   end
+
+  def confirmation 
+  end
 end
