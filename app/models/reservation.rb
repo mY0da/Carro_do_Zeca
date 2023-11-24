@@ -2,6 +2,8 @@ class Reservation < ApplicationRecord
   belongs_to :user
   belongs_to :car
 
+  has_many :reviews
+
   validate :dates_are_valid
 
   private
