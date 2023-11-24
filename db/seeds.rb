@@ -1,8 +1,9 @@
 require "faker"
 
 puts "Creating..."
-User.destroy_all
+Reservation.destroy_all
 Car.destroy_all
+User.destroy_all
 
   user_1 = { first_name: Faker::Games::Zelda.character, last_name: Faker::Games::Pokemon.name, phone_number: Faker::PhoneNumber.cell_phone, email: Faker::Internet.email, password: Faker::Internet.password(min_length: 8) }
   car_1 = Car.new(brand: Faker::Vehicle.make, car_type: Faker::Vehicle.drive_type, model: Faker::Vehicle.model(make_of_model: Faker::Vehicle.make), registration_plate: Faker::Vehicle.license_plate, description: Faker::Movie.quote, location: Faker::Address.city, price: Faker::Number.decimal(l_digits: 2, r_digits: 2), user_id: 1)
@@ -81,7 +82,7 @@ Car.destroy_all
   car_10.photo.attach(io: File.open(File.join(Rails.root, "app/assets/images/Cars/10.jpg")), filename: "10.jpg", content_type: "image/jpg")
 
   user = User.create!(user_10)
-  car_1.user = user
+  car_10.user = user
   car_10.save!
 
 puts "Finished!"
