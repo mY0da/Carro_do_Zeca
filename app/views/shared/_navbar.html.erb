@@ -1,9 +1,12 @@
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to(root_path) do %>
-      <%= image_tag 'rooster.png', class: 'nav-logo', alt: 'Carros do Zeca', size: '50x50' %>
-    <% end %>
+      <div class="logo" data-controller="gta" data-gta-audio-value="<%= audio_path("GTA.mp3") %>">
+        <%= link_to(root_path) do %>
+          <%= image_tag 'logo.png', class: 'nav-logo', alt: 'Carros do Zeca', size: '180x60' %>
+        <% end %>
+        <i data-action="click->gta#playTheme" class="fa-solid fa-play" style="color: #fff3b0"></i>
+      </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

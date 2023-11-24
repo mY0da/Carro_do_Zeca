@@ -1,37 +1,45 @@
-<div class="banner animate__animated animate__bounce animate__slower animate__infinite" style="background-image: url('assets/car-banner.png')"></div>
-
-<div class="container mt-5 d-flex justify-content-center">
+<div class="container d-flex justify-content-center mt-5">
   <div class="intro text-center">
     <h1 class="animate__animated animate__flip animate__slower animate__infinite">CARROS DO ZECA</h1>
-    <h3>💥💥 Explore the world's largest car sharing marketplace 💥💥</h3>
-    <p>(at least according do Zeca)</p>
+    <h3 class="slogan m-5">💥💥 Explore the world's largest car sharing marketplace 💥💥</h3>
   </div>
 </div>
 
+<div class="mt-3 banner animate__animated animate__bounce animate__slower animate__infinite" style="background-image: url('assets/car-banner.png')"></div>
+
+<div class="container mt-5 d-flex justify-content-center">
+  <div class="mid text-center">
+    <h2>❤️‍🔥❤️‍🔥 CHECK YOUR OPTIONS BELOW ❤️‍🔥❤️‍🔥</h2>
+  </div>
+</div>
+
+
 <div class="container">
-  <div class="row">
+  <div class="row m-5">
     <div class="col-sm-6">
       <div class="card">
         <img class="card-img-top" src="https://d3bzyjrsc4233l.cloudfront.net/news/MG_SUV.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Book a car</h5>
-          <p class="card-text">Want a car to take your lady to Mc Donald's? Check our deals!!!!</p>
+        <div class="card-body mid text-center">
+          <h3 class="card-title">Book a car</h3>
+          <p class="card-text">Want a car to take your lady to Mc Donald's? <br> Check our deals 💣 </p>
             <div>
-              <%= link_to "DALEEEEE", cars_path, :class => "btn btn-warning" %>
+              <%= link_to(cars_path) do %>
+                <%= image_tag 'dale.svg', class: 'bang-button', alt: 'bang-button', size: '250x100' %>
+              <% end %>
             </div>
         </div>
       </div>
     </div>
-
-
     <div class="col-sm-6">
       <div class="card">
         <img class="card-img-top" src="https://images.hgmsites.net/lrg/sleazy-car-salesman_100183514_l.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Become a host</h5>
-          <p class="card-text">Have a super dripped vehicle stopped at home? Put it for rental!!!!</p>
-          <div>
-              <%= link_to "TURRRBOO", new_car_path, :class => "btn btn-warning" %>
+        <div class="card-body mid text-center">
+          <h3 class="card-title">Become a host</h3>
+          <p class="card-text">Have a super dripped vehicle parked at home? <br> Put it for rental 🤑</p>
+            <div>
+              <%= link_to(cars_path) do %>
+                <%= image_tag 'turbo.svg', class: 'bang-button', alt: 'bang-button', size: '250x100' %>
+              <% end %>
             </div>
         </div>
       </div>
