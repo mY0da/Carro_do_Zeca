@@ -13,12 +13,14 @@ class ReservationsController < ApplicationController
 
     if @reservation.save
       redirect_to confirmation_car_reservations_path(@car)
+    else
+      render "cars/show", status: :unprocessable_entity
     end
     authorize @reservation
   end
 
   def index
-    @reservations = policy_scope(Reservation.where(user_id: current_user.id))
+    @reservations = policy_scope(Reservation.where(user: current_user))
     authorize @reservations
   end
 
