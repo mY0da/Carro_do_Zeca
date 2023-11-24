@@ -1,5 +1,10 @@
 class Car < ApplicationRecord
+  has_one_attached :photo
+
   belongs_to :user
+
+  has_many :reservations
+
   validates :brand, presence: true
   validates :model, presence: true
   validates :car_type, presence: true

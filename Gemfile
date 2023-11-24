@@ -80,3 +80,7 @@ gem "devise"
 gem "faker"
 
 gem "pundit"
+
+gem "dotenv-rails"
+
+gem "cloudinary"

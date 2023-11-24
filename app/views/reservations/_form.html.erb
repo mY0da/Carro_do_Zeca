@@ -1,21 +1,23 @@
-<h1>Book <%= @car.brand %> <%= @car.model %></h1>
+<div class="container">
+  <h3>Book <%= @car.brand %> <%= @car.model %></h3>
 
-<h2>Select a date</h2>
-<%= simple_form_for [@car, @reservation] do |f| %>
+  <h4>Select a date</h4>
+  <%= simple_form_for [@car, @reservation] do |f| %>
 
-  <div class="form-inputs">
-    <%= f.input :start_date,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
-    <%= f.input :end_date,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :start_date,
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
+      <%= f.input :end_date,
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
+    </div>
 
-  <div class="form-actions">
-    <%= link_to(confirmation_car_reservations_path(@car)) do %>
-      <%= f.submit %>
-    <% end %>
-  </div>
+    <div class="form-actions">
+      <%= link_to(confirmation_car_reservations_path(@car)) do %>
+        <%= f.submit %>
+      <% end %>
+    </div>
 
-<% end %>
+  <% end %>
+</div>

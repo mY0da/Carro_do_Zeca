@@ -17,6 +17,7 @@ class ReservationPolicy < ApplicationPolicy
   end
 
   def confirmation?
+    true
   end
 
   class Scope < Scope

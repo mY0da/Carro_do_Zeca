@@ -50,15 +50,15 @@ class CarsController < ApplicationController
   end
 
   def destroy
+    authorize @car
     @car = Car.find(params[:id])
     @car.destroy
     redirect_to my_cars_cars_path, status: :see_other
-    authorize @car
   end
 
   private
 
   def car_params
-    params.require(:car).permit(:brand, :car_type, :model, :registration_plate, :description, :location, :price)
+    params.require(:car).permit(:brand, :car_type, :model, :registration_plate, :description, :location, :price, :photo)
   end
 end
