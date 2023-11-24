@@ -8,9 +8,9 @@
     <div class="card-trip mb-4 d-flex">
       <%= link_to car, style: 'text-decoration: none', class: 'd-flex' do %>
         <% if car.photo.attached? %>
-          <%= cl_image_tag car.photo.key, height: 200, width: 150, crop: :fill %>
+          <%= cl_image_tag car.photo.key, height: 200, width: 200, crop: :fill %>
         <% else %>
-          <%= image_tag 'car_background.jpg', height: 200, width: 150, crop: :fill %>
+          <%= image_tag 'car_background.jpg', height: 200, width: 200, crop: :fill %>
         <% end %>
         <div class="card-trip-infos ml-3 d-flex flex-column justify-content-between">
           <div class="align-icons">
