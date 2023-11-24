@@ -17,7 +17,7 @@ class ReservationsController < ApplicationController
   end
 
   def index
-    @reservations = Reservation.all
+    @reservations = policy_scope(Reservation.where(user:current_user))
     authorize @reservations
   end
 
