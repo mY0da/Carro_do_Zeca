@@ -10,6 +10,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.car = @car
     @reservation.user = current_user
+
     if @reservation.save
       redirect_to confirmation_car_reservations_path(@car)
     else
