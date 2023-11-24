@@ -10,14 +10,15 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.car = @car
     @reservation.user = current_user
+
     if @reservation.save
-      redirect_to car_path(@car)
+      redirect_to confirmation_car_reservations_path(@car)
     end
     authorize @reservation
   end
 
   def index
-    @reservations = policy_scope(Reservation.where(user:current_user))
+    @reservations = policy_scope(Reservation.where(user_id: current_user.id))
     authorize @reservations
   end
 
