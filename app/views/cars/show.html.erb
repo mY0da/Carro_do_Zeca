@@ -1,9 +1,13 @@
 
-<div class="container">
+<div class="container mb-5">
   <div class="row">
     <div class="card-product d-flex align-items-center">
-      <div class="alignment" >
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjD2x4xEGygFb46PitJERsn3egbRMqvB7aQ4H5uAS0MgqaJeNEodadrW0eUH_g2Jb4Hlg&usqp=CAU", style='width: 600px; margin-right: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.6)'/>
+      <div class="alignment">
+        <% if @car.photo.attached? %>
+          <%= cl_image_tag @car.photo.key, class: 'img-show' %>
+        <% else %>
+          <%= image_tag 'car_background.jpg', class: 'img-show' %>
+        <% end %>
       </div>
       <div class="card-product-infos">
         <%= render @car %>
